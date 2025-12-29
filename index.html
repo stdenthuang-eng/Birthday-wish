@@ -2,81 +2,233 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Happy Birthday Secret Game!</title>
+  <title>For My Best Friend Cheata!💜</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <style>
+    .emoji-box span:active {
+  animation: wiggle 0.4s;
+}
+
+@keyframes wiggle {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(-10deg); }
+  50% { transform: rotate(10deg); }
+  75% { transform: rotate(-10deg); }
+  100% { transform: rotate(0deg); }
+}
+
+    .floating {
+  position: fixed;
+  bottom: -20px;
+  font-size: 18px;
+  animation: floatUp 10s linear infinite;
+  opacity: 0.6;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0;
+  }
+  10% { opacity: 0.6; }
+  100% {
+    transform: translateY(-120vh) scale(1.4);
+    opacity: 0;
+  }
+}
+
     body {
-      font-family: Arial, sans-serif;
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background: linear-gradient(135deg, #7b5fc4, #b084f5);
+      color: white;
       text-align: center;
-      background: #fff0f5;
-      padding: 50px 20px;
+    }
+
+    .container {
+      padding: 30px 20px;
+      max-width: 720px;
+      margin: auto;
     }
 
     h1 {
-      color: #d6336c;
-      margin-bottom: 30px;
+      font-size: 2.3em;
+      margin-bottom: 8px;
     }
 
-    .emoji-button {
-      font-size: 50px;
-      margin: 10px;
+    h2 {
+      font-weight: normal;
+      opacity: 0.9;
+      margin-bottom: 25px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 20px;
+      padding: 25px;
+      margin: 25px 0;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+
+    .message {
+      line-height: 1.8;
+      font-size: 1.05em;
+    }
+
+    .photo-box {
+      border: 2px dashed rgba(255,255,255,0.6);
+      border-radius: 15px;
+      padding: 30px;
+      margin: 15px 0;
+      font-size: 0.9em;
+      opacity: 0.85;
+    }
+
+    /* Secret emoji section */
+    .emoji-box {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      font-size: 2em;
       cursor: pointer;
-      transition: transform 0.2s;
+      margin-top: 10px;
     }
 
-    .emoji-button:hover {
-      transform: scale(1.2);
-    }
-
-    #message-display {
-      margin-top: 40px;
-      font-size: 24px;
-      color: #333;
-      min-height: 50px;
-    }
-
-    #final-message {
-      margin-top: 30px;
-      font-size: 28px;
-      color: #ff1493;
+    .secret {
       display: none;
+      margin-top: 15px;
+      font-size: 0.95em;
+      opacity: 0.95;
     }
+
+    footer {
+      margin-top: 40px;
+      font-size: 0.8em;
+      opacity: 0.8;
+    }
+    .card {
+  animation: fadeUp 1.2s ease both;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
   </style>
-</head>
-<body>
-
-  <h1>🎉 Happy Birthday to you my bestie cheataaaaa! 🎉</h1>
-  <p>Click the emojis to reveal your secret message!</p>
-
-  <div id="emoji-container">
-    <span class="emoji-button" data-msg="You are amazing! 😍">🎈</span>
-    <span class="emoji-button" data-msg="You make me laugh so much! 😂">🎉</span>
-    <span class="emoji-button" data-msg="I’m lucky to have you! 💖">🌸</span>
-    <span class="emoji-button" data-msg="Hope your day is full of smiles! 😆">🍰</span>
-    <span class="emoji-button" data-msg="You’re the best friend ever! 🥰">✨</span>
-  </div>
-
-  <div id="message-display"></div>
-  <div id="final-message">🎁 Surprise! Love you forever, bestie! 💕</div>
 
   <script>
-    const buttons = document.querySelectorAll('.emoji-button');
-    const display = document.getElementById('message-display');
-    const finalMsg = document.getElementById('final-message');
-    let clicks = 0;
-
-    buttons.forEach(button => {
-      button.addEventListener('click', () => {
-        const msg = button.dataset.msg;
-        display.textContent = msg;
-        clicks++;
-
-        if (clicks === buttons.length) {
-          finalMsg.style.display = 'block';
-        }
-      });
-    });
+    function reveal(id) {
+      const el = document.getElementById(id);
+      el.style.display = el.style.display === "block" ? "none" : "block";
+    }
   </script>
+  <script>
+  const emojis = ["💜","✨","🌸","💫"];
+  setInterval(() => {
+    const span = document.createElement("span");
+    span.className = "floating";
+    span.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+    span.style.left = Math.random() * 100 + "vw";
+    span.style.animationDuration = 8 + Math.random() * 6 + "s";
+    document.body.appendChild(span);
+    setTimeout(() => span.remove(), 14000);
+  }, 600);
+</script>
+</head>
 
+<body>
+  <div class="container">
+
+    <h1>Hey My Favorite Person 💜</h1>
+    <h2>This little purple page is for you</h2>
+
+    <div class="card message">
+      <p>
+        You’re not just my best friend,
+        you’re my comfort person,
+        my safe place,
+        and the one who makes everything feel lighter.
+      </p>
+
+      <p>
+        Life can be messy and loud,
+        but somehow being with you always feels calm.
+        I’m so thankful for every laugh,
+        every late talk,
+        and every memory we’ve made together.
+      </p>
+
+      <p>
+        If this page could hug you,
+        it would 💜
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Little Secret Wishes 🤫</h3>
+      <p style="font-size:0.9em; opacity:0.85;">Tap the emojis 💫</p>
+
+      <div class="emoji-box">
+        <span onclick="reveal('wish1')">🌸</span>
+        <span onclick="reveal('wish2')">🌙</span>
+        <span onclick="reveal('wish3')">✨</span>
+        <span onclick="reveal('wish4')">💜</span>
+      </div>
+
+      <div id="wish1" class="secret">May your days always be gentle and kind 🌸</div>
+      <div id="wish2" class="secret">May you always feel safe, loved, and enough 🌙</div>
+      <div id="wish3" class="secret">May your dreams come true, one by one ✨</div>
+      <div id="wish4" class="secret">No matter what, I’m always on your side 💜</div>
+    </div>
+
+    <div class="card">
+      <h3>Our Memories 📸</h3>
+
+      <div class="photo-box">
+        <img src="" style="width:100%; border-radius:15px;">
+        <span>(A moment I never want to forget)</span>
+      </div>
+
+      <div class="photo-box">
+        <img src="" style="width:100%; border-radius:15px;">
+        <span>(A day that made us laugh a lot)</span>
+      </div>
+
+      <div class="photo-box">
+        <img src="" style="width:100%; border-radius:15px;">
+        <span>(Because us = memories 💜)</span>
+      </div>
+    </div>
+
+    <div class="card message">
+      <p>
+        No matter how far life takes us,
+        you’ll always have a piece of my heart.
+      </p>
+
+      <p>
+        Thank you for being you.
+        I’m so lucky to have you.
+      </p>
+
+      <p>
+        Always your bestie 💜
+      </p>
+    </div>
+
+    <footer>
+      Made with love, just for you ✨
+    </footer>
+
+  </div>
 </body>
 </html>
