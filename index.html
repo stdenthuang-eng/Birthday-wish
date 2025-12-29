@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday Secret Game!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #fff0f5;
+      padding: 50px 20px;
+    }
+
+    h1 {
+      color: #d6336c;
+      margin-bottom: 30px;
+    }
+
+    .emoji-button {
+      font-size: 50px;
+      margin: 10px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .emoji-button:hover {
+      transform: scale(1.2);
+    }
+
+    #message-display {
+      margin-top: 40px;
+      font-size: 24px;
+      color: #333;
+      min-height: 50px;
+    }
+
+    #final-message {
+      margin-top: 30px;
+      font-size: 28px;
+      color: #ff1493;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎉 Happy Birthday to you my bestie cheataaaaa! 🎉</h1>
+  <p>Click the emojis to reveal your secret message!</p>
+
+  <div id="emoji-container">
+    <span class="emoji-button" data-msg="You are amazing! 😍">🎈</span>
+    <span class="emoji-button" data-msg="You make me laugh so much! 😂">🎉</span>
+    <span class="emoji-button" data-msg="I’m lucky to have you! 💖">🌸</span>
+    <span class="emoji-button" data-msg="Hope your day is full of smiles! 😆">🍰</span>
+    <span class="emoji-button" data-msg="You’re the best friend ever! 🥰">✨</span>
+  </div>
+
+  <div id="message-display"></div>
+  <div id="final-message">🎁 Surprise! Love you forever, bestie! 💕</div>
+
+  <script>
+    const buttons = document.querySelectorAll('.emoji-button');
+    const display = document.getElementById('message-display');
+    const finalMsg = document.getElementById('final-message');
+    let clicks = 0;
+
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        const msg = button.dataset.msg;
+        display.textContent = msg;
+        clicks++;
+
+        if (clicks === buttons.length) {
+          finalMsg.style.display = 'block';
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
